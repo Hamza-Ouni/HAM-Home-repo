@@ -8,10 +8,16 @@ import CardHouse from "./components/rentView/cardHouse.jsx";
 import SelectBox from "./components/rentView/selectBox.jsx";
 
 ReactDOM.render(
-  <div>
-    <CardHouse />
-    <Navbar />
-    <SelectBox />
-  </div>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById("app")
 );
+// ReactDOM.render(
+//   <div>
+//     <CardHouse />
+//     <Navbar />
+//     <SelectBox />
+//   </div>,
+//   document.getElementById("app")
+// );
