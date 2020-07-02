@@ -1,38 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import $ from "jquery";
-import List from "./components/homePage.jsx";
+import { BrowserRouter } from "react-router-dom";
+import "./style.css";
+import App from "./components/homepage/App.js";
+import Navbar from "./components/rentView/Navbar.jsx";
+import CardHouse from "./components/rentView/cardHouse.jsx";
+import SelectBox from "./components/rentView/selectBox.jsx";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-    };
-  }
-
-  componentDidMount() {
-    $.ajax({
-      url: "/items",
-      success: (data) => {
-        this.setState({
-          items: data,
-        });
-      },
-      error: (err) => {
-        console.log("err", err);
-      },
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>list</h1>
-        <List items={this.state.items} />
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(
+  <div>
+    <CardHouse />
+    <Navbar />
+    <SelectBox />
+  </div>,
+  document.getElementById("app")
+);
